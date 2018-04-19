@@ -1,6 +1,10 @@
 import csv
 from bs4 import BeautifulSoup
 import collections
+import importlib
+moduleName = 'hi_to_eng'
+importlib.import_module(moduleName)
+from hi_to_eng import transliterate,_setup
 
 
 f = open('/home/rishav/Desktop/hi-topics.txt', 'r')
@@ -29,20 +33,26 @@ with open('/home/rishav/Desktop/hi-en_dict.csv') as f_obj:
         if line['hword'] in dict.keys():
             dict[line['hword']].append(line['eword'])
         else:
-            dict.update({line['hword']: list(line['eword'])})
+            dict.update({line['hword']: list([line['eword']])})
 
-# print(dict)
+# print(dict['निराला'][0])
+_setup()
+# print(transliterate("निराला", 'devanagari', 'iast'))
 
 eng_queries = ""
 for query in queries.splitlines():
     eng_query = ""
     word_list = query.split(' ')
-    # print(wordlist)
     for word in word_list:
         if word in dict:
-            # eng_query = eng_query+'('+word+')'+dict[word]+' '
-            eng_query = eng_query+dict[word]+' '
+            # eng_query = eng_query+'('+word+')'+dict[word][0]+' '
+            if len(dict[word]) == 1:
+                eng_query = eng_query+dict[word][0]+' '
+            else:
+                eng_query = eng_query+dict[word][0]+' '
             # print(word, ' ', dict[word],' ')
+        else:
+            eng_query = eng_query+transliterate(word, 'devanagari', 'iast')+' '
     print(query)
     print(eng_query)
     eng_queries = eng_queries+eng_query+'\n'
