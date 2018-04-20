@@ -17,7 +17,7 @@
 
 <top>
 <num>79</num>
-<title>china sey of to in  mount everest ke from k  middle between midst midway  sarak street road  else or  highway project </title>
+<title>china sey of to in  mount everest ke from k  middle between midst midway  sarak road street  else or  highway project </title>
 </top>
 
 <top>
@@ -197,7 +197,7 @@
 
 <top>
 <num>115</num>
-<title>bangladesh main in to throughout  political clash brawl fight  </title>
+<title>bangladesh main in to throughout  political encounter fight wrangle  </title>
 </top>
 
 <top>
