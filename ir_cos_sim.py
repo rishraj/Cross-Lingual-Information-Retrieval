@@ -1,0 +1,118 @@
+import csv
+from bs4 import BeautifulSoup
+import collections
+import importlib
+moduleName = 'hi_to_eng'
+importlib.import_module(moduleName)
+from hi_to_eng import transliterate,_setup
+import re
+from gensim.models import Word2Vec
+import numpy as np
+import random
+
+
+f = open('/home/hp/Downloads/terrier-core-4.2-bin/terrier-core-4.2/hi.topics.76-125.2010.txt', 'r')
+read_file = f.read()
+
+f = open('crowd_transliterations.hi-en.txt', 'r')
+transliterate_file = f.read()
+
+# with open('/home/rishav/Desktop/hi-en_dict.csv', 'r') as f_obj:
+#     read_dict = csv.reader(f_obj)
+
+trans_dict = {}
+for line in transliterate_file.splitlines():
+    # print(line)
+    dict_list = re.split(r'\s{1,}', line)
+    # print(dict_list)
+    trans_dict.update({dict_list[1]: dict_list[0]})
+
+# print(trans_dict['कोप'])
+
+soup = BeautifulSoup(read_file, "html5lib")
+
+titles = soup.find_all('title')
+string = ""
+
+for title in titles:
+    if title is not None:
+        string = string+'\n'+str(title)
+
+queries = BeautifulSoup(string, "html5lib").text
+
+dict = {}
+with open('English-Hindi Dictionary.csv') as f_obj:
+    reader = csv.DictReader(f_obj, delimiter=',')
+    for line in reader:
+        if line['hword'] in dict.keys():
+            dict[line['hword']].append(line['eword'])
+        else:
+            dict.update({line['hword']: list([line['eword']])})
+
+# print(dict['निराला'][0])
+_setup()
+# print(transliterate("निराला", 'devanagari', 'iast'))
+model_hi_en = Word2Vec.load('zword2vec_merged_hi_en.bin')
+vocab = list(model_hi_en.wv.vocab)
+
+eng_queries = ""
+for query in queries.splitlines():
+    eng_query = ""
+    word_list = query.split(' ')
+    for word in word_list:
+        if (word in trans_dict) or (word in dict):
+            if word in trans_dict:
+                eng_query = eng_query+trans_dict[word]+' '
+            if word in dict:
+                if len(dict[word]) == 1:
+                    eng_query = eng_query+dict[word][0]+' '
+                else:
+                    if word in vocab:
+                        cos_sim = []
+                        for w in dict[word]:
+                            if w in vocab:
+                                sim = model_hi_en.similarity(word,w)
+                            else:
+                                sim = -1
+                            cos_sim.append(sim)
+                        l = np.array(cos_sim)
+                        max_sims = (-l).argsort()
+                        s = ""
+                        if len(cos_sim)>=3:
+                            for i in range(3):
+                                s = s+ dict[word][max_sims[i]] + " "
+                        else:
+                            for i in range(len(cos_sim)):
+                                s = s + dict[word][i] + " "
+                        eng_query = eng_query+s+' '
+                    else:
+                        temp = dict[word]
+                        random.shuffle(temp)                        
+                        s = ""
+                        if len(temp)>=3:
+                            for i in range(3):
+                                s = s+ temp[i] + " "
+                        else:
+                            for i in range(len(temp)):
+                                s = s + temp[i] + " "
+                        eng_query = eng_query+s+' '
+
+        else:
+            eng_query = eng_query+(transliterate(word, 'devanagari', 'iast')).lower()+' '
+    print(query)
+    print(eng_query)
+    eng_queries = eng_queries+eng_query+'\n'
+
+f = open("merged_embed_dict_en-queries_top3sim.txt", "w+")
+f.write("<topics>\n")
+num = 76
+for line in eng_queries.splitlines():
+    f.write('\n<top>\n<num>'+str(num)+'</num>\n<title>'+line+'</title>\n</top>\n')
+    num = num+1
+f.write('</topics>\n')
+f.close()
+
+
+
+
+
