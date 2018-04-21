@@ -1,0 +1,101 @@
+<top><num>76</num>
+<title>Clashes between the Gurjars and Meenas</title></top>
+<top><num>77</num>
+<title>Attacks by Hezbollah guerrillas</title></top>
+<top><num>78</num>
+<title>Conflict between Advani and Singhal over the Ram Mandir issue</title></top>
+<top><num>79</num>
+<title>Building roads between China and Mount Everest</title></top>
+<top><num>80</num>
+<title>Babri Masjid demolition case started against Advani</title></top>
+<top><num>81</num>
+<title>Problems related to the immunization programme against Japanese Encephalitis in India</title></top>
+<top><num>82</num>
+<title>Proposed bus service between Srinagar and Muzaffarabad</title></top>
+<top><num>83</num>
+<title>Election campaign of Laloo Prasad Yadav and Ram Vilas Paswan</title></top>
+<top><num>84</num>
+<title>Brinda Karat's allegations against Swami Ramdev</title></top>
+<top><num>85</num>
+<title>Abu Salem, accused in the Mumbai Bomb Blast case, in jail custody</title></top>
+<top><num>86</num>
+<title>Privatization of the Mumbai and Delhi airports</title></top>
+<top><num>87</num>
+<title>Discussions between Manmohan Singh and Pervez Musharraf regarding the position of troops around Siachen</title></top>
+<top><num>88</num>
+<title>Popular protests against the arrest of the accused in the Shankar Raman murder case</title></top>
+<top><num>89</num>
+<title>Involvement of Congress ministers in the oil-for-food scam</title></top>
+<top><num>90</num>
+<title>Indian representatives visit Bangladesh</title></top>
+<top><num>91</num>
+<title>Allegations of financial corruption against Pratibha Patil</title></top>
+<top><num>92</num>
+<title>Activities of the Tamil Tigers of Sri Lanka</title></top>
+<top><num>93</num>
+<title>Taking bribes for raising questions in parliament</title></top>
+<top><num>94</num>
+<title>Indian Navy accused of leaking classified information</title></top>
+<top><num>95</num>
+<title>Racism row on the Big Brother show</title></top>
+<top><num>96</num>
+<title>Pramod Mahajan's killer</title></top>
+<top><num>97</num>
+<title>Quarrel between the Ambani brothers regarding ownership of the Reliance Group</title></top>
+<top><num>98</num>
+<title>India dismisses China's claims on Arunachal Pradesh</title></top>
+<top><num>99</num>
+<title>Laloo Prasad Yadav and the fodder scam</title></top>
+<top><num>100</num>
+<title>Monica Bedi and the passport forgery case</title></top>
+<top><num>101</num>
+<title>Drug party at Pramod Mahajan's bungalow</title></top>
+<top><num>102</num>
+<title>Pakistani cricketers involved in a doping scandal</title></top>
+<top><num>103</num>
+<title>Bilateral problems surrounding the Baglihar hydro-electric power project</title></top>
+<top><num>104</num>
+<title>Jaya Bachchan sacked from Rajya Sabha membership</title></top>
+<top><num>105</num>
+<title>Taj heritage corridor scandal</title></top>
+<top><num>106</num>
+<title>Ban on Taslima Nasreen's novel "Shame"</title></top>
+<top><num>107</num>
+<title>Furore over the release of a CD containing anti-Muslim sentiments in Uttar Pradesh</title></top>
+<top><num>108</num>
+<title>Greater Nagaland</title></top>
+<top><num>109</num>
+<title>New political party formed by Raj Thackeray</title></top>
+<top><num>110</num>
+<title>Sino-Indian relations and border trade</title></top>
+<top><num>111</num>
+<title>Dance bars banned in Mumbai</title></top>
+<top><num>112</num>
+<title>Links between Gutkha manufacturers and the underworld</title></top>
+<top><num>113</num>
+<title>Political clashes in Bangladesh</title></top>
+<top><num>114</num>
+<title>Investigation of the arms scandal in the Defence Ministry</title></top>
+<top><num>115</num>
+<title>Serial blasts in Varanasi</title></top>
+<top><num>116</num>
+<title>Encounter specialist Daya Nayak</title></top>
+<top><num>117</num>
+<title>Controversy over land at Kalinganagar</title></top>
+<top><num>118</num>
+<title>Terrorist strike at Ayodhya</title></top>
+<top><num>119</num>
+<title>Taj Mahal controversy</title></top>
+<top><num>120</num>
+<title>Sex CD scandal involving Anara Gupta</title></top>
+<top><num>121</num>
+<title>Blasts on Samjhauta Express</title></top>
+<top><num>122</num>
+<title>Sanjay Dutt's surrender</title></top>
+<top><num>123</num>
+<title>Death of Yasser Arafat</title></top>
+<top><num>124</num>
+<title>Sale of illegal drugs in various Indian states</title></top>
+<top><num>125</num>
+<title>Attack on the Lal Masjid</title></top>
+
