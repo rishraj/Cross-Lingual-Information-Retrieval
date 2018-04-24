@@ -7,6 +7,18 @@ importlib.import_module(moduleName)
 from hi_to_eng import transliterate,_setup
 import re
 
+def pharse_translate(query):
+    li = []
+    l = len(query.split(' '))
+    temp = query.split(' ')
+    for i in range(l):
+        for j in range(l-1):
+            for k in range(l):
+                if k+i-j<l:
+                    phrase = temp[k:k+i-j]
+                    li.append(phrase)
+    return li
+
 
 f = open('/home/rishav/Desktop/hi-topics.txt', 'r')
 read_file = f.read()
@@ -53,7 +65,12 @@ _setup()
 eng_queries = ""
 for query in queries.splitlines():
     eng_query = ""
+    pharse = pharse_translate(query)
     word_list = query.split(' ')
+    for p in phrase:
+        if p in dict.keys():
+            eng_query += dict[p]+' '
+    
     for word in word_list:
         if (word in trans_dict) or (word in dict):
             if word in trans_dict:
