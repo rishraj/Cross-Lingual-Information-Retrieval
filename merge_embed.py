@@ -34,4 +34,8 @@ def main(hindi_file,english_file):
 	model.save('word2vec_merged_hi_en.bin')
 
 if __name__ == '__main__':
+	if len(sys.argv) != 3:
+		# print(sys.argv[0], sys.argv[1], sys.argv[2])
+		print('Usage: python merge_embed.py <Parallel corpus Hindi file> <Parallel corpus English file>')
+		sys.exit(1)
 	main(sys.argv[1],sys.argv[2])
