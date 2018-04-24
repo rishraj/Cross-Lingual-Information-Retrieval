@@ -138,4 +138,8 @@ def main(hindi_query_file, trans_dict_file, bilingual_dict, word2vec_model):
 
 
 if __name__ == '__main__':
+	if len(sys.argv) != 5:
+		# print(sys.argv[0], sys.argv[1], sys.argv[2])
+		print('Usage: python ir_cos_sim.py <Hindi query File > <Transliteration Dictionary> <Bilingual Dictionary> <Word2vec embeddings>')
+		sys.exit(1)
 	main(sys.argv[1],sys.argv[2], sys.argv[3],sys.argv[4])
