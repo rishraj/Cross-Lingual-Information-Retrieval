@@ -10,7 +10,7 @@ hi_to_eng.py : It is for the transliteration part. It takes Hindi word and scrip
 
 ir.py
 
-ir_cos_sim.py : It takes Hindi query file, Bilingual dictionary, transliteration dictionary, word2vec word embeddings and generate a English query file(english_queries.txt). It is for the dictinary based approach with cosine similarity to remove the ambiguity.
+ir_cos_sim.py : It takes Hindi query file,  transliteration dictionary, import sys, word2vec word embeddings and generate a English query file(english_queries.txt). It is for the dictinary based approach with cosine similarity to remove the ambiguity.
 
 merged_embed.py : It takes two file one is parallel corpus for Hindi and the other is parallel corpus for English. And generate merged word embeddings, that is by merging two sentence (one from Hindi and the other from English) and then using gensim to generate word2vec for words.
 
