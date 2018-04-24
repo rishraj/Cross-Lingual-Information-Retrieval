@@ -2,7 +2,7 @@
 
 <top>
 <num>76</num>
-<title>gujjarom aura mina samudaya ke bica samgharsa gujjarom te to on  anusucita tribe main in to  classified hierarchical  karne ke from k  liye mina netaom ka of in  protest contradiction  prakat apparent express  aim act  </title>
+<title>gujjarom +aura +mina +samudaya +ke +bica +samgharsa gujjarom te to on  anusucita tribe main in to  classified hierarchical  karne ke from k  liye mina netaom ka of in  protest contradiction  prakat apparent express  aim act  </title>
 </top>
 
 <top>
@@ -12,7 +12,7 @@
 
 <top>
 <num>78</num>
-<title>ram ram lord rama  mandir temple te to on  lekara adavani-simghala  dispute controversy  </title>
+<title>ram ram lord rama  mandir temple te to on  lekara adavanisimghala  dispute controversy  </title>
 </top>
 
 <top>
@@ -67,7 +67,7 @@
 
 <top>
 <num>89</num>
-<title>"tela ke from k  batley cereal corn  kamda" main in to  kamgresa ke from k  minister </title>
+<title>oil oil slush  ke from k  batley cereal corn  trunk main in to  kamgresa ke from k  minister </title>
 </top>
 
 <top>
@@ -97,7 +97,7 @@
 
 <top>
 <num>95</num>
-<title>'biga bradara' show main in to  racism relative dispute controversy  </title>
+<title>big broter brother show main in to  racism relative dispute controversy  </title>
 </top>
 
 <top>
@@ -137,7 +137,7 @@
 
 <top>
 <num>103</num>
-<title>bagalihara jala-vidyuta project te to on  lekara dvipaksiya problem situation  </title>
+<title>bagalihara jalavidyuta project te to on  lekara dvipaksiya problem situation  </title>
 </top>
 
 <top>
@@ -152,7 +152,7 @@
 
 <top>
 <num>106</num>
-<title>tasalima nasrin ke from k  novel 'lajja' on on upon  restriction proviso  </title>
+<title>tasalima nasrin ke from k  novel shame pity shyness  on on upon  restriction proviso  </title>
 </top>
 
 <top>
@@ -162,7 +162,7 @@
 
 <top>
 <num>108</num>
-<title>gretara (vrhattara) nagalaimda </title>
+<title>gretara vrhattara nagalaimda </title>
 </top>
 
 <top>
@@ -172,7 +172,7 @@
 
 <top>
 <num>110</num>
-<title>bharata-cina ke from k  relations relationship  our and also  border frontier border  business trade  </title>
+<title>bharatacina ke from k  relations relationship  our and also  border frontier border  business trade  </title>
 </top>
 
 <top>
@@ -187,12 +187,12 @@
 
 <top>
 <num>113</num>
-<title>bangladesh main in to  political fight brawl  </title>
+<title>bangladesh main in to  political brawl wrangle  </title>
 </top>
 
 <top>
 <num>114</num>
-<title>protection defence  department bureau  main in to  astra-zastra (hathiyara) saude ki to check examination  </title>
+<title>protection defence  department bureau  main in to  astrazastra weapon arms  saude ki to check examination  </title>
 </top>
 
 <top>
@@ -202,7 +202,7 @@
 
 <top>
 <num>116</num>
-<title>enakaumtara spezalista(vizesajja) daya mercy compassion  nayak hero protagonist  </title>
+<title>enakaumtara spezalistavizesajja daya mercy compassion  nayak hero protagonist  </title>
 </top>
 
 <top>
@@ -227,7 +227,7 @@
 
 <top>
 <num>121</num>
-<title>'samajhauta eksapresa' main in to  explosion blast  </title>
+<title>agreement settlement  express express main in to  explosion blast  </title>
 </top>
 
 <top>
@@ -242,7 +242,7 @@
 
 <top>
 <num>124</num>
-<title>bharat india ke from k  various different  rajyom main in to  outlaw outlawed  alcoholic intoxicating  substance material  ka of in  kraya-vikraya </title>
+<title>bharat india ke from k  various different  rajyom main in to  outlaw outlawed  alcoholic intoxicating  substance material  ka of in  krayavikraya </title>
 </top>
 
 <top>
