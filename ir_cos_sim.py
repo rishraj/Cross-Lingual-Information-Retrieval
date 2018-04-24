@@ -122,7 +122,7 @@ for query in queries.splitlines():
     eng_queries = eng_queries+eng_query+'\n'
 
 #write query in the file
-f = open("merged_embed_dict_en-queries_top2sim_nopunc.txt", "w+")
+f = open("english_queries.txt", "w+")
 f.write("<topics>\n")
 
 #format the English query
