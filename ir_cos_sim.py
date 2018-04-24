@@ -10,25 +10,23 @@ from gensim.models import Word2Vec
 import numpy as np
 import random
 
-
-f = open('/home/hp/Downloads/terrier-core-4.2-bin/terrier-core-4.2/hi.topics.76-125.2010.txt', 'r')
+#read hindi query file
+f = open('hi.topics.76-125.2010.txt', 'r')
 read_file = f.read()
 
+#read transliteration dictionary
 f = open('crowd_transliterations.hi-en.txt', 'r')
 transliterate_file = f.read()
 
-# with open('/home/rishav/Desktop/hi-en_dict.csv', 'r') as f_obj:
-#     read_dict = csv.reader(f_obj)
 
+#create in memory representation for transliteration dictionary
 trans_dict = {}
 for line in transliterate_file.splitlines():
-    # print(line)
     dict_list = re.split(r'\s{1,}', line)
-    # print(dict_list)
     trans_dict.update({dict_list[1]: dict_list[0]})
 
-# print(trans_dict['कोप'])
 
+#to parse the query and find title field
 soup = BeautifulSoup(read_file, "html5lib")
 
 titles = soup.find_all('title')
@@ -41,6 +39,9 @@ for title in titles:
 queries = BeautifulSoup(string, "html5lib").text
 
 dict = {}
+max_phrase_len = 0
+
+#read bilingual hindi english dictionary and create in memory representation
 with open('English-Hindi Dictionary.csv') as f_obj:
     reader = csv.DictReader(f_obj, delimiter=',')
     for line in reader:
@@ -49,16 +50,33 @@ with open('English-Hindi Dictionary.csv') as f_obj:
         else:
             dict.update({line['hword']: list([line['eword']])})
 
-# print(dict['निराला'][0])
+#to run transliteration module setup is done 
 _setup()
-# print(transliterate("निराला", 'devanagari', 'iast'))
-model_hi_en = Word2Vec.load('zword2vec_merged_hi_en.bin')
+# print(transliterate("निराला", 'devanagari', 'hk'))
+
+#load word vectors
+model_hi_en = Word2Vec.load('word2vec_merged_hi_en.bin')
 vocab = list(model_hi_en.wv.vocab)
+
+#to remove punctuation mark set rem_punc to 1
+rem_punc = 0
+punctuation = '''''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+
+#to select top k set top_k to k
+top_k = 2
 
 eng_queries = ""
 for query in queries.splitlines():
     eng_query = ""
-    word_list = query.split(' ')
+    no_punct = ""  
+    for char in query:  
+        if rem_punc and char not in punctuation:  
+            no_punct = no_punct + char 
+    if rem_punc:
+    	word_list = no_punct.split(' ')
+    else:
+    	word_list = query.split(' ')
+
     for word in word_list:
         if (word in trans_dict) or (word in dict):
             if word in trans_dict:
@@ -78,8 +96,8 @@ for query in queries.splitlines():
                         l = np.array(cos_sim)
                         max_sims = (-l).argsort()
                         s = ""
-                        if len(cos_sim)>=3:
-                            for i in range(3):
+                        if len(cos_sim)>=top_k:
+                            for i in range(top_k):
                                 s = s+ dict[word][max_sims[i]] + " "
                         else:
                             for i in range(len(cos_sim)):
@@ -89,8 +107,8 @@ for query in queries.splitlines():
                         temp = dict[word]
                         random.shuffle(temp)                        
                         s = ""
-                        if len(temp)>=3:
-                            for i in range(3):
+                        if len(temp)>=top_k:
+                            for i in range(top_k):
                                 s = s+ temp[i] + " "
                         else:
                             for i in range(len(temp)):
@@ -98,13 +116,16 @@ for query in queries.splitlines():
                         eng_query = eng_query+s+' '
 
         else:
-            eng_query = eng_query+(transliterate(word, 'devanagari', 'iast')).lower()+' '
+            eng_query = eng_query+(transliterate(word, 'devanagari', 'hk')).lower()+' '
     print(query)
     print(eng_query)
     eng_queries = eng_queries+eng_query+'\n'
 
-f = open("merged_embed_dict_en-queries_top3sim.txt", "w+")
+#write query in the file
+f = open("merged_embed_dict_en-queries_top2sim_nopunc.txt", "w+")
 f.write("<topics>\n")
+
+#format the English query
 num = 76
 for line in eng_queries.splitlines():
     f.write('\n<top>\n<num>'+str(num)+'</num>\n<title>'+line+'</title>\n</top>\n')
