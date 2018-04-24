@@ -3,11 +3,19 @@ import os
 from gensim.models import Word2Vec
 import re
 from bs4 import BeautifulSoup
+import sys
 
-model_hi = Word2Vec.load('../hi/hi.bin')
+if len(sys.argv) != 3:
+	# print(sys.argv[0], sys.argv[1], sys.argv[2])
+	print('Usage: python doc2feature path_of_queryfile path_of_embedding')
+	sys.exit(1)
+
+# model_hi = Word2Vec.load('../hi/hi.bin')
+model_hi = Word2Vec.load(sys.argv[2])
 fd = open('query-feature.txt', 'w')
 
-f = open('queries-modified.txt', 'r')
+# f = open('queries-modified.txt', 'r')
+f = open(sys.argv[1])
 st = f.read()
 f.close()
 soup = BeautifulSoup(st, "html5lib")

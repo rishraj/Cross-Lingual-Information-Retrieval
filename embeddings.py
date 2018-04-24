@@ -4,6 +4,14 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 from bs4 import BeautifulSoup
 from hi_to_eng import transliterate,_setup
+import sys
+
+
+if len(sys.argv) != 5:
+	# print(sys.argv[0], sys.argv[1], sys.argv[2])
+	print('Usage: python doc2feature path_of_english_embeddings path_of_hindi_embedding path_of_dictionary path_of_query_file')
+	sys.exit(1)
+
 
 # fd = open('parallel/IITB.en-hi.hi', 'r')
 # lines = fd.read().splitlines()
@@ -14,9 +22,11 @@ from hi_to_eng import transliterate,_setup
 # print('training done ...')
 # model.save('model/word2vec-hi.bin')
 # print(len(model))
-model_en = Word2Vec.load('model/word2vec-eng.bin')
+# model_en = Word2Vec.load('model/word2vec-eng.bin')
+model_en = Word2Vec.load(sys.argv[1])
 # model_hi = Word2Vec.load('model/word2vec-hi.bin')
-model_hi = Word2Vec.load('../hi/hi.bin')
+# model_hi = Word2Vec.load('../hi/hi.bin')
+model_hi - Word2Vec.load(sys.argv[2])
 words = list(model_hi.wv.vocab)
 # print(len(words))
 # # print((model['स्थिति']))
@@ -24,7 +34,8 @@ words = list(model_hi.wv.vocab)
 # print(sim)
 
 dictionary = []
-with open('English-Hindi Dictionary.csv') as csvfile:
+dictionary_file = sys.argv[3]
+with open(dictionary_file) as csvfile:
 	file = csv.reader(csvfile)
 	for row in file:
 		if row[0]=='eword' and row[1]=='hword':
@@ -86,7 +97,9 @@ print(en.shape, type(en), type(model_hi['मंदिर']), model_hi['मंद
 sim = model_en.wv.similar_by_vector(en.reshape(300,), topn=10, restrict_vocab=None)
 print(sim)
 
-fd = open('queries-modified.txt', 'r')
+query_file = sys.argv[4]
+# fd = open('queries-modified.txt', 'r')
+fd = open(query_file, 'r')
 st = fd.read()
 fd.close()
 soup = BeautifulSoup(st, "html5lib")

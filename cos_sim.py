@@ -1,4 +1,5 @@
 import numpy as np
+import sys
 
 # def cos_sim(a,b):
 # 	d = a*b
@@ -60,8 +61,16 @@ def read_query_vec(fname):
 	# print(len(doc_feature[0]))
 	return doc_name, doc_feature
 
-query_fname, query_feature = read_query_vec("query-feature.txt")
-doc_fname, doc_feature = read_doc_vec("feature.txt")
+
+if len(sys.argv) != 3:
+	# print(sys.argv[0], sys.argv[1], sys.argv[2])
+	print('Usage: python doc2feature <document feature vector file> <query feature file>')
+	sys.exit(1)
+
+# query_fname, query_feature = read_query_vec("query-feature.txt")
+query_fname, query_feature = read_query_vec(sys.argv[1])
+# doc_fname, doc_feature = read_doc_vec("feature.txt")
+doc_fname, doc_feature = read_doc_vec(sys.argv[2])
 
 print((doc_feature).shape)
 print(np.array(doc_feature).shape)

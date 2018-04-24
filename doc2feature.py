@@ -3,12 +3,20 @@ import os
 from gensim.models import Word2Vec
 import re
 from bs4 import BeautifulSoup
+import sys
 
-directory = 'dataset/'
+if len(sys.argv) != 3:
+	# print(sys.argv[0], sys.argv[1], sys.argv[2])
+	print('Usage: python doc2feature path_of_documents path_of_embedding')
+	sys.exit(1)
+
+# directory = 'dataset/'
+directory = sys.argv[1]
 # for filename in os.listdir(directory):
 # 	if filename.endswith('.utf8'):
 
-model_en = Word2Vec.load('model/word2vec-eng.bin')
+# model_en = Word2Vec.load('model/word2vec-eng.bin')
+model_en = Word2Vec.load(sys.argv[2])
 fd = open('feature.txt', 'w')
 
 f = open('collection.spec', 'r')
