@@ -23,7 +23,7 @@ e.g. python ir_cos_sim.py hi.topics.76-125.2010.txt crowd_transliterations.hi-en
 **merged_embed.py:** It takes two file as command line argument one is parallel corpus for Hindi and the other is parallel corpus for English and generates merged word embeddings, that is by merging two sentence (one from Hindi and the other from English) and then using gensim to generate word2vec for words.
 e.g. python merge_embed.py parallel/IITB.en-hi.hi parallel/IITB.en-hi.en 
 
-###Dataset Links-
+### Dataset Links-
 
 **Queries -** http://arnab.cse.iitk.ac.in/cs657/corpora/hindi/
 
