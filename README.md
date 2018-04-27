@@ -1,4 +1,4 @@
-Project Report has been added as Project_Report.pdf
+**Project Report** has been added as *Project_Report.pdf*
 
 The queries are assumed to be given in Hindi and converted to English
 
@@ -16,7 +16,7 @@ hi_to_eng.py : Used for transliteration. It takes Hindi word and script of the w
 
 ir.py : It chooses any random English word from the list of candidate words available in the dictionary. This method was opted to form a baseline which we could use to compare the performance of other methods
 
-ir_cos_sim.py : It takes four file as command line argument Hindi query file,  transliteration dictionary, import sys, word2vec word embeddings and generate a English query file(english_queries.txt). It is for the dictinary based approach with cosine similarity to remove the ambiguity. \textbf{(Best results obtained)}
+ir_cos_sim.py : It takes four file as command line argument Hindi query file,  transliteration dictionary, import sys, word2vec word embeddings and generate a English query file(english_queries.txt). It is for the dictinary based approach with cosine similarity to remove the ambiguity. **(Best results obtained)**
 e.g. python ir_cos_sim.py hi.topics.76-125.2010.txt crowd_transliterations.hi-en.txt English-Hindi_Dictionary.csv word2vec_merged_hi_en.bin 
 
 
