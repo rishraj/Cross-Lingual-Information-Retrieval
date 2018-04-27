@@ -1,3 +1,5 @@
+Project Report has been added as Project_Report.pdf
+
 The queries are assumed to be given in Hindi and converted to English
 
 Python files:
